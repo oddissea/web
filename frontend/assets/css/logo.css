@@ -1,0 +1,46 @@
+.header .navbar-brand .brand-logo {
+    display: inline-block;
+    height: 50px;
+    width: 150px; /* o el ancho que quieras */
+    margin-top: -5px;
+    margin-bottom: -5px;
+    margin-right: 12px;
+    background: url('../img/brand/brand-coordi.png') no-repeat center / contain;
+    border: none;
+    border-radius: 0;
+}
+
+/* Logo alternativo en modo dark */
+[data-bs-theme="dark"] .header .navbar-brand .brand-logo {
+    background-image: url('../img/brand/brand-coordi-white.png');
+}
+
+
+.footer .footer-brand-logo {
+    display: block;
+    margin: 0 auto 10px;
+    width: 128px;           /* ancho fijo */
+    height: 103px;          /* altura fija, ajusta a gusto */
+    background: url('../img/brand/brand-minicoordi-center.png') no-repeat center / contain;
+    border: none;
+    border-radius: 0;
+}
+
+/* Versión en dark mode */
+[data-bs-theme="dark"] .footer .footer-brand-logo {
+    background-image: url('../img/brand/brand-minicoordi-center-w2.png');
+}
+
+/* default */
+.about-author .author .image img.author-logo {
+    content: url('../img/brand/brand-minicoordi-center.png');
+    width: 100%;
+    height: auto;
+}
+
+/* dark mode */
+[data-bs-theme="dark"] .about-author .author .image img.author-logo {
+    padding: 0.6rem;
+    content: url('../img/brand/brand-minicoordi-center-w.png');
+}
+

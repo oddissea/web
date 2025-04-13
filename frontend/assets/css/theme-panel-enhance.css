@@ -1,0 +1,288 @@
+/* ====================================================================== */
+/*                          MODO ACCESIBLE                                */
+/* ====================================================================== */
+
+/* Resaltar elementos con focus (tabulador) en modo accesible */
+[data-bs-theme="accessible"] :focus {
+    outline: none !important;
+    box-shadow: 0 0 0 4px #FFD700 !important; /* amarillo dorado */
+    border-color: #FFD700 !important;
+}
+
+[data-bs-theme="accessible"] .header .navbar-brand .brand-logo {
+    background-image: url('../img/brand/brand-coordi-black.png');
+}
+
+/* dark mode */
+[data-bs-theme="accessible"] .about-author .author .image img.author-logo {
+    padding: 0.1rem;
+    content: url('../img/brand/brand-minicoordi-center-b.png');
+}
+
+[data-bs-theme="accessible"] body {
+    font-size: 1.2rem;
+    line-height: 2;
+    letter-spacing: 0.03em;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Títulos destacados */
+[data-bs-theme="accessible"] h1,
+[data-bs-theme="accessible"] h2,
+[data-bs-theme="accessible"] p,
+[data-bs-theme="accessible"] .home-content,
+[data-bs-theme="accessible"] .content-title {
+    color: #000000 !important;
+}
+
+/* Texto general más grande */
+[data-bs-theme="accessible"] p {
+    font-size: 1.2rem;
+}
+
+/* Línea negra ancha entre home y about en modo accesible */
+[data-bs-theme="accessible"] #home {
+    margin-bottom: 0rem;
+    border-bottom: 60px solid #000000;
+}
+
+/* === HOME modo accesible === */
+
+/* Fondo blanco sin imagen */
+[data-bs-theme="accessible"] #home {
+    background-color: #ffffff !important;
+}
+
+[data-bs-theme="accessible"] #home h3{
+    color: #000000 !important;
+}
+
+/* Eliminar fondo de content-bg */
+[data-bs-theme="accessible"] #home .content-bg {
+    background-image: none !important;
+    background-color: transparent !important;
+    position: relative;
+}
+
+/* Eliminar pseudo-elemento decorativo */
+[data-bs-theme="accessible"] #home .content-bg:before {
+    content: none !important;
+    background: none !important;
+}
+
+/* === QUIÉNES SOMOS modo accesible === */
+/* Fondo gris claro sin imagen */
+[data-bs-theme="accessible"] #about {
+    background-color: var(--bs-light) !important;
+}
+
+[data-bs-theme="accessible"] .about-author .author .info,
+[data-bs-theme="accessible"] .about-author .author .info small {
+    font-size: 1.2rem;
+    color: #000000 !important;
+}
+[data-bs-theme="accessible"] .skills .skills-name {
+    font-size: 1.2rem;
+    color: #000000 !important;
+}
+
+/* === DATOS modo accesible === */
+
+[data-bs-theme="accessible"] #milestone {
+    background-color: #000000 !important;
+}
+
+[data-bs-theme="accessible"] #milestone .content-bg {
+    background-image: none !important;
+    background-color: transparent !important;
+    position: relative;
+}
+
+/* Forzar textos blancos dentro de milestone */
+[data-bs-theme="accessible"] #milestone,
+[data-bs-theme="accessible"] #milestone * {
+    color: #ffffff !important;
+}
+
+/* === TEAM modo accesible === */
+[data-bs-theme="accessible"] #team .text-theme,
+[data-bs-theme="accessible"] #team p {
+    font-size: 1.2rem;
+}
+
+/* === QUOTE modo accesible === */
+[data-bs-theme="accessible"] #quote {
+    background-color: #000000 !important;
+}
+
+[data-bs-theme="accessible"] .quote{
+    font-size: 2rem;
+}
+[data-bs-theme="accessible"] .quote small {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+[data-bs-theme="accessible"] #quote .content-bg {
+    background-image: none !important;
+    background-color: transparent !important;
+    position: relative;
+}
+
+/* Forzar textos blancos dentro de quote */
+[data-bs-theme="accessible"] #quote,
+[data-bs-theme="accessible"] #quote * {
+    color: #ffffff !important;
+
+}
+
+
+/* === ÁREAS modo accesible === */
+/* Fondo gris claro sin imagen */
+[data-bs-theme="accessible"] #service {
+    background-color: var(--bs-light) !important;
+}
+
+[data-bs-theme="accessible"] .service .info .desc {
+    font-size: 1.1rem;
+}
+
+/* === APÓYANOS modo accesible === */
+[data-bs-theme="accessible"] .pricing-container h3 {
+    font-size: 1.1rem;
+    color: #white !important;
+}
+
+/* footer */
+[data-bs-theme="accessible"] .footer .footer-brand-logo {
+    background-image: url('../img/brand/brand-minicoordi-center-w2.png');
+}
+
+[data-bs-theme="accessible"] #footer p{
+    color: white !important;
+}
+
+[data-bs-theme="accessible"] .footer .social-list a{
+    font-size: 1.5rem;
+}
+
+
+/* === Botones modo accesible === */
+[data-bs-theme="accessible"] .btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover / Focus accesible coherente */
+[data-bs-theme="accessible"] .btn:hover,
+[data-bs-theme="accessible"] .btn:focus {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000 !important;
+}
+
+
+
+/* ====================================================================== */
+/*                          ALTO CONTRASTE                                */
+/* ====================================================================== */
+/* === Modo Alto Contraste === */
+[data-bs-theme="high-contrast"] body,
+[data-bs-theme="high-contrast"] body * {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/*
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-red { background-color: #ff0000 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-pink { background-color: #ff69b4 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-orange { background-color: #ffa500 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-yellow { background-color: #ffff00 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-lime { background-color: #00ff00 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-green { background-color: #008000 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-teal { background-color: #008080 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-cyan { background-color: #00ffff !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-blue { background-color: #0000ff !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-purple { background-color: #800080 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-indigo { background-color: #4b0082 !important; }
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a.bg-gray-500 { background-color: #6c757d !important; }
+*/
+
+[data-bs-theme="high-contrast"] .theme-panel .theme-list-item a {
+    pointer-events: none !important;
+    opacity: 0.3 !important;
+    filter: grayscale(100%) brightness(1.5) !important;
+    cursor: default !important;
+    user-select: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[data-bs-theme="high-contrast"] .about-author .author .image img.author-logo {
+    padding: 0.6rem;
+    content: url('../img/brand/brand-minicoordi-center-w2.png');
+}
+
+[data-bs-theme="high-contrast"] .header .navbar-brand .brand-logo {
+    background-image: url('../img/brand/brand-coordi-white.png');
+}
+
+/* Botones en alto contraste */
+[data-bs-theme="high-contrast"] .btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+[data-bs-theme="high-contrast"] .btn:hover,
+[data-bs-theme="high-contrast"] .btn:focus {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* Eliminar imágenes de fondo */
+[data-bs-theme="high-contrast"] .content-bg,
+[data-bs-theme="high-contrast"] .content-bg:before {
+    background-image: none !important;
+    background-color: transparent !important;
+    content: none !important;
+}
+
+/* === Pricing container en modo alto contraste === */
+[data-bs-theme="high-contrast"] .pricing-container {
+    border: 0px solid #ffffff !important;
+    padding: 0.5rem;
+    background-color: #ffffff !important;
+}
+
+
+
+[data-bs-theme="high-contrast"] .pricing-container .features {
+    border-top: 2px solid #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+/* Focus visible */
+[data-bs-theme="high-contrast"] :focus {
+    outline: none !important;
+    box-shadow: 0 0 0 4px #FFD700 !important;
+    border-color: #FFD700 !important;
+}
+
+
+
