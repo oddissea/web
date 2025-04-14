@@ -148,10 +148,13 @@
     font-size: 1.1rem;
 }
 
+
+
+
 /* === APÓYANOS modo accesible === */
 [data-bs-theme="accessible"] .pricing-container h3 {
     font-size: 1.1rem;
-    color: #white !important;
+    color: white !important; /*esto estaba así #white*/
 }
 
 /* footer */
