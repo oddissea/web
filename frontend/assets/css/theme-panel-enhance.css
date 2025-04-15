@@ -23,7 +23,7 @@
     font-size: 1.2rem;
     line-height: 2;
     letter-spacing: 0.03em;
-    background-color: #ffffff;
+    background-color: var(--bs-light);/**/
     color: #000000;
 }
 
@@ -51,7 +51,7 @@
 
 /* Fondo blanco sin imagen */
 [data-bs-theme="accessible"] #home {
-    background-color: #ffffff !important;
+    background-color: #ffffff !important; /**/
 }
 
 [data-bs-theme="accessible"] #home h3{
@@ -74,7 +74,7 @@
 /* === QUIÉNES SOMOS modo accesible === */
 /* Fondo gris claro sin imagen */
 [data-bs-theme="accessible"] #about {
-    background-color: var(--bs-light) !important;
+    background-color: #ffffff !important;/**/
 }
 
 [data-bs-theme="accessible"] .about-author .author .info,
@@ -137,25 +137,45 @@
 
 }
 
-
 /* === ÁREAS modo accesible === */
-/* Fondo gris claro sin imagen */
+/* Fondo gris claro sin imagen  --bs-light*/
 [data-bs-theme="accessible"] #service {
-    background-color: var(--bs-light) !important;
+    background-color: #ffffff !important;/**/
 }
 
 [data-bs-theme="accessible"] .service .info .desc {
     font-size: 1.1rem;
 }
 
-
+/* Pictogramas en vez de iconos*/
+[data-bs-theme="accessible"] .service .icon .integral{
+    content: url('../img/icon/picto-atencionIntegral.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .ocio{
+    content: url('../img/icon/picto-ocio.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .empleo{   
+    content: url('../img/icon/picto-empleo.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .igualdad{
+    content: url('../img/icon/picto-igualdad.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .formacion{
+    content: url('../img/icon/picto-formacion.png');
+    width: 75% !important;
+}
 
 
 /* === APÓYANOS modo accesible === */
 [data-bs-theme="accessible"] .pricing-container h3 {
     font-size: 1.1rem;
-    color: white !important; /*esto estaba así #white*/
+    color: var(--bs-light) !important; /**/
 }
+
 
 /* footer */
 [data-bs-theme="accessible"] .footer .footer-brand-logo {
