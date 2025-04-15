@@ -23,7 +23,7 @@
     font-size: 1.2rem;
     line-height: 2;
     letter-spacing: 0.03em;
-    background-color: #ffffff;
+    background-color: #ffffff;/**/
     color: #000000;
 }
 
@@ -137,9 +137,8 @@
 
 }
 
-
 /* === ÁREAS modo accesible === */
-/* Fondo gris claro sin imagen */
+/* Fondo gris claro sin imagen  --bs-light*/
 [data-bs-theme="accessible"] #service {
     background-color: var(--bs-light) !important;
 }
@@ -148,10 +147,33 @@
     font-size: 1.1rem;
 }
 
+/* Pictogramas en vez de iconos*/
+[data-bs-theme="accessible"] .service .icon .integral{
+    content: url('../img/icon/fisioterapia.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .ocio{
+    content: url('../img/icon/bicicleta.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .empleo{   
+    content: url('../img/icon/maletin.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .igualdad{
+    content: url('../img/icon/igualdad-de-genero.png');
+    width: 75% !important;
+}
+[data-bs-theme="accessible"] .service .icon .formacion{
+    content: url('../img/icon/formacion.png');
+    width: 75% !important;
+}
+
+
 /* === APÓYANOS modo accesible === */
 [data-bs-theme="accessible"] .pricing-container h3 {
     font-size: 1.1rem;
-    color: #white !important;
+    color: #ffffff !important;
 }
 
 /* footer */
