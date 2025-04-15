@@ -23,7 +23,7 @@
     font-size: 1.2rem;
     line-height: 2;
     letter-spacing: 0.03em;
-    background-color: var(--bs-light);/**/
+    background-color: #ffffff;/**/
     color: #000000;
 }
 
@@ -51,7 +51,7 @@
 
 /* Fondo blanco sin imagen */
 [data-bs-theme="accessible"] #home {
-    background-color: #ffffff !important; /**/
+    background-color: #ffffff !important;
 }
 
 [data-bs-theme="accessible"] #home h3{
@@ -74,7 +74,7 @@
 /* === QUIÉNES SOMOS modo accesible === */
 /* Fondo gris claro sin imagen */
 [data-bs-theme="accessible"] #about {
-    background-color: #ffffff !important;/**/
+    background-color: var(--bs-light) !important;
 }
 
 [data-bs-theme="accessible"] .about-author .author .info,
@@ -140,7 +140,7 @@
 /* === ÁREAS modo accesible === */
 /* Fondo gris claro sin imagen  --bs-light*/
 [data-bs-theme="accessible"] #service {
-    background-color: #ffffff !important;/**/
+    background-color: var(--bs-light) !important;
 }
 
 [data-bs-theme="accessible"] .service .info .desc {
@@ -149,23 +149,23 @@
 
 /* Pictogramas en vez de iconos*/
 [data-bs-theme="accessible"] .service .icon .integral{
-    content: url('../img/icon/picto-atencionIntegral.png');
+    content: url('../img/icon/fisioterapia.png');
     width: 75% !important;
 }
 [data-bs-theme="accessible"] .service .icon .ocio{
-    content: url('../img/icon/picto-ocio.png');
+    content: url('../img/icon/bicicleta.png');
     width: 75% !important;
 }
 [data-bs-theme="accessible"] .service .icon .empleo{   
-    content: url('../img/icon/picto-empleo.png');
+    content: url('../img/icon/maletin.png');
     width: 75% !important;
 }
 [data-bs-theme="accessible"] .service .icon .igualdad{
-    content: url('../img/icon/picto-igualdad.png');
+    content: url('../img/icon/igualdad-de-genero.png');
     width: 75% !important;
 }
 [data-bs-theme="accessible"] .service .icon .formacion{
-    content: url('../img/icon/picto-formacion.png');
+    content: url('../img/icon/formacion.png');
     width: 75% !important;
 }
 
@@ -173,9 +173,8 @@
 /* === APÓYANOS modo accesible === */
 [data-bs-theme="accessible"] .pricing-container h3 {
     font-size: 1.1rem;
-    color: var(--bs-light) !important; /**/
+    color: #ffffff !important;
 }
-
 
 /* footer */
 [data-bs-theme="accessible"] .footer .footer-brand-logo {
