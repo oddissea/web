@@ -11,7 +11,9 @@
     text-align:center;
     font-size:1.1rem;
 }
-
+.title {
+    color: var(--bs-app-theme);
+}
 /*#welcome .content .container{
     color: black;
 }
