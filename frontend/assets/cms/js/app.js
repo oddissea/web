@@ -32,7 +32,7 @@ function handleFormSubmit(event) {
     // Obtener los valores de los campos del formulario
     const title = document.getElementById('newCardTitle').value;
     const content = document.getElementById('newCardContent').value;
-
+    const webpage = document.getElementById('newcardSection').value;
     // Valor predeterminado para la imagen (placeholder)
     let imageUrl = 'assets/img/';
 
@@ -49,7 +49,7 @@ function handleFormSubmit(event) {
         window.projectManager.add(title, content, imageUrl);
     } else {
         // Llamar al método de añadir artículo del módulo featuredManager
-        window.featuredManager.add(title, content, imageUrl);
+        window.featuredManager.add(title, content, webpage, imageUrl);
     }
 
     // Cerrar el modal después de añadir la tarjeta

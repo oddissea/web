@@ -60,13 +60,9 @@ function createFeaturedArticle(id, title, content, webpage, imageUrl, isImageRig
                     <div class="card-body">
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text">${content}</p>
-                        <p class="card-text">${webpage}</p>
                         <p class="card-text"><small class="text-muted">Última actualización hace unos minutos</small></p>
                         <div class="d-flex">
                             <a href="#" class="btn btn-outline-primary me-2">Leer más</a>
-                            <button class="btn btn-outline-danger btn-delete-featured" data-id="${id}">
-                                <i class="fas fa-trash"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -86,13 +82,9 @@ function createFeaturedArticle(id, title, content, webpage, imageUrl, isImageRig
                     <div class="card-body">
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text">${content}</p>
-                        <p class="card-text">${webpage}</p>
                         <p class="card-text"><small class="text-muted">Última actualización hace unos minutos</small></p>
                         <div class="d-flex">
                             <a href="#" class="btn btn-outline-primary me-2">Leer más</a>
-                            <button class="btn btn-outline-danger btn-delete-featured" data-id="${id}">
-                                <i class="fas fa-trash"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -104,27 +96,9 @@ function createFeaturedArticle(id, title, content, webpage, imageUrl, isImageRig
     cardDiv.innerHTML = cardHTML;
 
     // Agregar event listener al botón de eliminar para manejar la eliminación
-    const deleteButton = cardDiv.querySelector('.btn-delete-featured');
-    if (deleteButton) {
-        deleteButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Obtener el ID del artículo a partir del atributo data-id
-            const articleId = this.getAttribute('data-id');
-            // Llamar a la función de eliminación
-            deleteFeatured(articleId);
-        });
-    }
+
 
     return cardDiv;
-}
-
-/**
- * Guarda un artículo destacado en localStorage utilizando la función auxiliar de utils.js
- *
- * @param {Object} article - Objeto del artículo a guardar
- */
-function saveFeatured(article) {
-    window.cmsUtils.saveToStorage(article, FEATURED_STORAGE_KEY);
 }
 
 /**
@@ -134,66 +108,9 @@ function saveFeatured(article) {
  */
 function loadFeatured() {
     return window.cmsUtils.loadFromStorage(FEATURED_STORAGE_KEY);
+
 }
 
-/**
- * Elimina un artículo destacado específico identificado por su ID
- *
- * @param {string} id - ID único del artículo a eliminar
- */
-function deleteFeatured(id) {
-    // Obtener todos los artículos
-    let articles = loadFeatured();
-
-    // Filtrar el artículo a eliminar (mantener todos excepto el que tiene el ID especificado)
-    articles = articles.filter(article => article.id !== id);
-
-    // Guardar la lista actualizada en localStorage
-    localStorage.setItem(FEATURED_STORAGE_KEY, JSON.stringify(articles));
-
-    // Volver a renderizar la lista de artículos
-    renderFeatured();
-
-    // Mostrar un mensaje de confirmación de la eliminación
-    showDeleteConfirmation();
-}
-
-/**
- * Muestra una notificación toast de Bootstrap confirmando la eliminación
- * La notificación aparece en la esquina inferior derecha y desaparece después de 3 segundos
- */
-function showDeleteConfirmation() {
-    // Crear un contenedor para el toast
-    const toastContainer = document.createElement('div');
-    toastContainer.className = 'position-fixed bottom-0 end-0 p-3';
-    toastContainer.style.zIndex = 11 + "";
-
-    // Crear la estructura HTML del toast
-    toastContainer.innerHTML = `
-        <div id="deleteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header bg-success text-white">
-                <strong class="me-auto">CMS</strong>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Artículo destacado eliminado correctamente.
-            </div>
-        </div>
-    `;
-
-    // Añadir el toast al cuerpo del documento
-    document.body.appendChild(toastContainer);
-
-    // Inicializar y mostrar el toast utilizando la API de Bootstrap
-    const toastElement = toastContainer.querySelector('.toast');
-    const toast = new bootstrap.Toast(toastElement, { delay: 3000 }); // Desaparece después de 3 segundos
-    toast.show();
-
-    // Eliminar el elemento toast del DOM cuando se oculte (evitar acumulación de elementos)
-    toastElement.addEventListener('hidden.bs.toast', function() {
-        document.body.removeChild(toastContainer);
-    });
-}
 
 /**
  * Renderiza todos los artículos destacados en el contenedor correspondiente
@@ -213,8 +130,11 @@ function renderFeatured() {
     // Reiniciar la variable de posición de imagen para empezar con imagen a la izquierda
     isImageRight = false;
 
+    let fileName = location.pathname.split("/").slice(-1)
+    console.log(fileName);
     // Para cada artículo, crear su elemento y añadirlo al contenedor
     articles.forEach(article => {
+        if (article.webpage === fileName[0]) {
         const articleElement = createFeaturedArticle(
             article.id,
             article.title,
@@ -225,6 +145,9 @@ function renderFeatured() {
         );
         articlesContainer.prepend(articleElement); // Agregar al principio (los más nuevos arriba)
         isImageRight = !isImageRight; // Alternar la posición de la imagen para el próximo artículo
+        } else {
+            console.log("nada :3")
+        }
     });
 }
 
@@ -237,35 +160,9 @@ function renderFeatured() {
  * @param {string} imageUrl - URL de la imagen del artículo (opcional)
  * @returns {Object} El objeto del artículo creado
  */
-function addFeatured(title, content, webpage,  imageUrl) {
-    // Generar un ID único para el nuevo artículo
-    const id = window.cmsUtils.generateUniqueId();
-
-    // Crear el objeto del artículo
-    const article = {
-        id: id,
-        title: title,
-        content: content,
-        webpage: webpage,
-        imageUrl: imageUrl,
-        createdAt: new Date().toISOString() // Añadir fecha de creación
-    };
-
-    // Guardar en el almacenamiento
-    saveFeatured(article);
-
-    // Renderizar todos los artículos destacados
-    renderFeatured();
-
-    return article;
-}
-
 // Exportar las funciones a través del objeto featuredManager en window
 window.featuredManager = {
-    createArticle: createFeaturedArticle, // Función para crear un artículo destacado
-    save: saveFeatured,                   // Función para guardar un artículo
     load: loadFeatured,                   // Función para cargar artículos
     render: renderFeatured,               // Función para renderizar todos los artículos
-    add: addFeatured,                     // Función para añadir un nuevo artículo
-    delete: deleteFeatured                // Función para eliminar un artículo
+
 };
