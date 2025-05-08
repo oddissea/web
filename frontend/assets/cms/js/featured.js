@@ -233,7 +233,7 @@ function renderFeatured() {
  *
  * @param {string} title - Título del nuevo artículo
  * @param {string} content - Descripción del nuevo artículo
- * @param {string} webpage - Seccion a la que pertenece
+ * @param {string} webpage - Sección a la que pertenece
  * @param {string} imageUrl - URL de la imagen del artículo (opcional)
  * @returns {Object} El objeto del artículo creado
  */

@@ -130,11 +130,15 @@ function renderFeatured() {
     // Reiniciar la variable de posición de imagen para empezar con imagen a la izquierda
     isImageRight = false;
 
+    // Obtenemos el nombre de la página en la que estamos actualmente (Ej. empleo.html , ocio.html , etc..)
     let fileName = location.pathname.split("/").slice(-1)
-    console.log(fileName);
-    // Para cada artículo, crear su elemento y añadirlo al contenedor
+    // Debido a que hay un array, con 1 entrada, convertimos el array en una String única, sin cambios.
+    fileName = fileName.toString()
+    // Para cada artículo, nos preparamos para crear su propio elemento
     articles.forEach(article => {
-        if (article.webpage === fileName[0]) {
+        // Comprobamos si el artículo tiene especificada la página correcta en sus datos
+        if (article.webpage === fileName) {
+            // Si lo está, corremos el código de creación de elemento.
         const articleElement = createFeaturedArticle(
             article.id,
             article.title,
@@ -146,6 +150,7 @@ function renderFeatured() {
         articlesContainer.prepend(articleElement); // Agregar al principio (los más nuevos arriba)
         isImageRight = !isImageRight; // Alternar la posición de la imagen para el próximo artículo
         } else {
+            // Si el artículo no está, mandamos un mensaje a la consola.
             console.log("nada :3")
         }
     });
@@ -156,7 +161,7 @@ function renderFeatured() {
  *
  * @param {string} title - Título del nuevo artículo
  * @param {string} content - Descripción del nuevo artículo
- * @param {string} webpage - Seccion a la que pertenece
+ * @param {string} webpage - Sección a la que pertenece
  * @param {string} imageUrl - URL de la imagen del artículo (opcional)
  * @returns {Object} El objeto del artículo creado
  */
